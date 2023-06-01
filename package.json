@@ -1,0 +1,18 @@
+{
+  "name": "palmera-backend",
+  "version": "1.0.0",
+  "description": "Proyecto Palmera Import e-commerce Backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Germán Sebastián Martínez Layos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
