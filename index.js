@@ -2,6 +2,7 @@ const express = require("express");
 const connectDb = require("./config/db");
 const usuariosRoutes = require("./routes/usuarioRoutes");
 const auth = require("./routes/auth");
+const categoriaRoutes = require("./routes/categoriaRoutes");
 
 const app = express();
 app.use(express.json({extended: true}));
@@ -12,7 +13,7 @@ connectDb();
 //rutas
 app.use("/api/usuarios", usuariosRoutes);
 app.use("/api/auth", auth);
-
+app.use("/api/categoria", categoriaRoutes)
 
 
 
