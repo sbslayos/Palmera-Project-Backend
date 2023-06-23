@@ -18,7 +18,7 @@ exports.crearUsuario = async ( req, res) => {
     usuario.password = await bcritjs.hash(password, 10);
 
     // Guardar en base de datos
-        const usuarioAlmacenado = await usuario.save();
+        const usuarioAlmacenado = await Usuario.save();
     
         res.json(usuarioAlmacenado);
         
