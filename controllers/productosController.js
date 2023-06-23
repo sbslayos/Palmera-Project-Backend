@@ -78,7 +78,7 @@ exports.actualizarProducto = async (req, res) =>{
     }
 
 }
-exports.borrarCategoria = async (req, res) =>{
+exports.borrarProducto = async (req, res) =>{
     try {
         await Productos.deleteOne({_id: req.params.id})
         res.json({msg:"Producto eliminado"})

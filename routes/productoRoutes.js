@@ -11,6 +11,6 @@ router.post("/", autencicacionMidd, productosController.crearProducto);
 
 router.put("/:id", autencicacionMidd, productosController.actualizarProducto);
 
-router.delete("/:id", autencicacionMidd, productosController.borrarCategoria);
+router.delete("/:id", autencicacionMidd, productosController.borrarProducto);
 
 module.exports = router;
