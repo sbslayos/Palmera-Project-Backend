@@ -1,10 +1,12 @@
-const Usuario = require ("../models/Usuarios");
-const bcritjs = require ("bcryptjs");
+const Usuario = require("../models/Usuarios");
+const bcryptjs = require ("bcryptjs");
 
 
 exports.crearUsuario = async ( req, res) => {
     /*console.log(req.body); */
+    console.log(req.body)
     const {password, email} = req.body;
+    
     try {
         //unico email
         let usuario = await Usuario.findOne({email})
@@ -15,10 +17,11 @@ exports.crearUsuario = async ( req, res) => {
         //crear nuevo usuario
     usuario = new Usuario(req.body);
     //hash password
-    usuario.password = await bcritjs.hash(password, 10);
-
+    
+    usuario.password = await bcryptjs.hash(password, 10);
+    
     // Guardar en base de datos
-        const usuarioAlmacenado = await Usuario.save();
+        const usuarioAlmacenado = await usuario.save();
     
         res.json(usuarioAlmacenado);
         

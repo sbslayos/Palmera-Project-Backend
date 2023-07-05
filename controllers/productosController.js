@@ -21,6 +21,7 @@ exports.leerProducto = async (req, res) =>{
 exports.crearProducto = async (req, res) => {
     // const token = req.headers['x-auth-token'];
     const {categoriaId} = req.body;
+    // console.log(req);
     try {
 
         const enCategoria = await Categorias.findById(categoriaId);
