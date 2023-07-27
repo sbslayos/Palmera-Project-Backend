@@ -33,6 +33,19 @@ exports.leerCategoriaId = async ( req, res ) => {
     }
 }
 
+exports.obtenerCategoriaId = async (req, res) =>{
+    const {id} = req.params
+    try {
+        const categoria = await Categorias.findById(id);
+        res.json({categoria})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({msg: "Error al obtener la categoria"});
+    }
+};
+
+
+
 exports.crearCategoria = async (req, res) => {
     try {
         const categoria = new Categorias(req.body);
@@ -41,7 +54,8 @@ exports.crearCategoria = async (req, res) => {
 
         categoria.save();
 
-        res.json(categoria);
+        res.json({msg:"categoria creada"});
+        res.json(categoria)
 
     } catch (error) {
         console.log(error);
@@ -71,7 +85,7 @@ exports.actualizarCategoria = async ( req, res) => {
 exports.borrarCategoria = async (req, res) => {
     try {
         await Categorias.deleteOne({_id: req.params.id});
-        res.json({msn:"categoria eliminada"});
+        res.json({msg:"categoria eliminada"});
     } catch (error) {
         console.log(error);
     }
