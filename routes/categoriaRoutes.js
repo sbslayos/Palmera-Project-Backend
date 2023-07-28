@@ -7,7 +7,7 @@ router.get("/home", categoriasController.leerCategoriaHome);
 
 router.get("/", autenticacionMidd, categoriasController.leerCategoria);
 
-router.get("/:id", autenticacionMidd, categoriasController.leerCategoriaId);
+//router.get("/:id", autenticacionMidd, categoriasController.leerCategoriaId);
 
 router.get("/:id", autenticacionMidd, categoriasController.obtenerCategoriaId);
 

@@ -23,21 +23,21 @@ exports.leerCategoria = async ( req, res) => {
     }
 }
 
-exports.leerCategoriaId = async ( req, res ) => {
-    try {
-        const categoria = await Categorias.find({creador: req.usuario.id});
-        res.json({ categoria})
+// exports.leerCategoriaId = async ( req, res ) => {
+//     try {
+//         const categoria = await Categorias.find({creador: req.usuario.id});
+//         res.json({ categoria})
 
-    } catch (error) {
-        console.log(error);
-    }
-}
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
 exports.obtenerCategoriaId = async (req, res) =>{
     const {id} = req.params
     try {
         const categoria = await Categorias.findById(id);
-        res.json({categoria})
+        res.json({ categoria })
     } catch (error) {
         console.log(error);
         res.status(500).json({msg: "Error al obtener la categoria"});
